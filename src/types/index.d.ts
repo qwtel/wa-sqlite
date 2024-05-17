@@ -1333,7 +1333,7 @@ declare module 'wa-sqlite/src/VFS.js' {
      * @param {number} iOffset
      * @returns {number}
      */
-    xRead(fileId: number, pData: {
+    xRead(fileId: number, pData: Uint8Array|{
         size: number;
         value: Uint8Array;
     }, iOffset: number): number;
@@ -1343,7 +1343,7 @@ declare module 'wa-sqlite/src/VFS.js' {
      * @param {number} iOffset
      * @returns {number}
      */
-    xWrite(fileId: number, pData: {
+    xWrite(fileId: number, pData: Uint8Array|{
         size: number;
         value: Uint8Array;
     }, iOffset: number): number;
@@ -1622,6 +1622,13 @@ declare module 'wa-sqlite/src/examples/MemoryAsyncVFS.js' {
   export class MemoryAsyncVFS extends MemoryVFS {
   }
 }
+
+// declare module 'wa-sqlite/src/examples/OriginPrivateFileSystemVFS.js' {
+//   import * as VFS from "wa-sqlite/src/VFS.js";
+//   export class OriginPrivateFileSystemVFS extends VFS.Base {
+//     name: string;
+//   }
+// }
 
 /** @ignore */
 declare module 'wa-sqlite/src/examples/tag.js' {
